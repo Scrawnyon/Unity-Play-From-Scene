@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public static class PlayModeSceneSetter
 {
-    [MenuItem("Editor Start Scene/Set Current As Start")]
+    [MenuItem("Editor Start Scene/Set Current As Start", priority = 0)]
     static void SetStartScene()
     {
         Scene _currScene = SceneManager.GetActiveScene();
@@ -21,6 +21,7 @@ public static class PlayModeSceneSetter
         EditorSceneManager.playModeStartScene = _sceneAsset;
     }
 
-    [MenuItem("Editor Start Scene/Clear")]
+    [MenuItem("Editor Start Scene/Clear", priority = 1)]
     static void ClearStartScene() => EditorSceneManager.playModeStartScene = null;
 }
+
